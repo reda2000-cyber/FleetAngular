@@ -15,6 +15,12 @@ import { DriverDetailsComponent } from './driver/driver-details/driver-details.c
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { VehicleDialogComponent } from './vehicle/vehicle-dialog/vehicle-dialog.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+
+
 
 
 
@@ -38,7 +44,11 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
