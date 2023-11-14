@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Driver } from './driver';
 
 @Component({
   selector: 'app-driver',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./driver.component.css']
 })
 export class DriverComponent {
+
+  driver !: Driver;
 
 }

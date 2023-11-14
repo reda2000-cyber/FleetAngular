@@ -1,2 +1,3 @@
-<app-driver-list></app-driver-list>
-<app-driver-details></app-driver-details>
+<app-driver-list (driverSelected)="driver = $event"></app-driver-list>
+<app-driver-details [driver]="driver" *ngIf="driver"></app-driver-details>
+<div *ngIf="!driver">Please select a driver</div>
