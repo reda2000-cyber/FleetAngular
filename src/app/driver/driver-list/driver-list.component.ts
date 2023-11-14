@@ -20,9 +20,9 @@ export class DriverListComponent {
 
 
   drivers : Driver[] = [
-    new Driver(0,"Reda", "SM", this.vehicles[0], "assets/Drivers/driver0.png"),
-    new Driver(1,"Moha", "MM", this.vehicles[2], "assets/Drivers/driver1.png"),
-    new Driver(2,"Karim", "RM", this.vehicles[1], "assets/Drivers/driver2.png")
+    new Driver(0,"reda", "sm", this.vehicles[0], "assets/Drivers/driver0.png"),
+    new Driver(1,"moha", "mm", this.vehicles[2], "assets/Drivers/driver1.png"),
+    new Driver(2,"karim", "rm", this.vehicles[1], "assets/Drivers/driver2.png")
   ]
 
   onDriverSelected(driver : Driver){
