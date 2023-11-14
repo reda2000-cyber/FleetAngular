@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import { ShadowDirective } from './utils/shadow.directive';
 
 
 
@@ -35,7 +36,8 @@ import {MatTableModule} from '@angular/material/table';
     DriverItemComponent,
     DriverDetailsComponent,
     VehicleComponent,
-    VehicleDialogComponent
+    VehicleDialogComponent,
+    ShadowDirective
   ],
   imports: [
     BrowserModule,
