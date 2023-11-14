@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fleet';
+
+  accPage : string = "drivers";
+
+
+  onPageSelected(page : string){
+    this.accPage = page; 
+  }
 }
