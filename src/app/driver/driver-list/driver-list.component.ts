@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Vehicle } from 'src/app/vehicle/vehicle';
 import { Driver } from '../driver';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-driver-list',
@@ -21,5 +23,11 @@ export class DriverListComponent {
     new Driver(1,"Moha", "MM", this.vehicles[2], "assets/Drivers/driver1.png"),
     new Driver(2,"Karim", "RM", this.vehicles[1], "assets/Drivers/driver2.png")
   ]
+
+  constructor(private sanitizer: DomSanitizer) { }
+
+  getImgContent(img: string): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustStyle(`url(${img})`);
+  }
 
 }
