@@ -21,6 +21,9 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AuthComponent } from './auth/auth.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 
 
@@ -31,7 +34,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
   ],
-  providers: [],
+  providers: [    
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

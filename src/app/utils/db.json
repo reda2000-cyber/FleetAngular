@@ -26,5 +26,16 @@
     }
   ],
   "drivers": [],
-  "users": []
+  "users": [
+    {
+      "email": "re@gmail.com",
+      "password": "$2a$10$fRrCt17dtZFE.ovxG8tdX.xsHWzpErUfIsRPfJpzysCR0c8Jc/776",
+      "id": 1
+    },
+    {
+      "email": "ddd@gmail.com",
+      "password": "$2a$10$c4GkkKqBU08u4mT3EmKVke6UH4o6mkGwcKYqpnaRmqqtwJI6HHwt6",
+      "id": 2
+    }
+  ]
 }

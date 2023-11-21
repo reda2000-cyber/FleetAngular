@@ -5,17 +5,20 @@ import { DriverDetailsComponent } from './driver/driver-details/driver-details.c
 import { DriverListComponent } from './driver/driver-list/driver-list.component';
 import { DriverComponent } from './driver/driver.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth.guard';
 
 
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/drivers', pathMatch: 'full'},
   {path: 'drivers', component: DriverComponent, children: [
-      {path: '', component: DriverListComponent},
-      {path: 'new', component: DriverDetailsComponent},
-      {path: ':id', component: DriverDetailsComponent}
+      {path: '', component: DriverListComponent, canActivate : [AuthGuard]},
+      {path: 'new', component: DriverDetailsComponent, canActivate : [AuthGuard]},
+      {path: ':id', component: DriverDetailsComponent, canActivate : [AuthGuard]}
     ]},
-  {path: 'vehicles', component: VehicleComponent}
+  {path: 'vehicles', component: VehicleComponent, canActivate : [AuthGuard]},
+  {path: 'login', component: AuthComponent}
 ];
 
 @NgModule({

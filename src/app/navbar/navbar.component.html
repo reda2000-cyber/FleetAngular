@@ -3,6 +3,9 @@
   
     <div class="spacer"></div>
   
-    <a mat-button routerLink="/drivers" routerLinkActive="active">Drivers</a>
-  <a mat-button routerLink="/vehicles" routerLinkActive="active">Vehicles</a>
+    <a mat-button routerLink="/drivers" routerLinkActive="active" *ngIf="isAuthenticated">Drivers</a>
+    <a mat-button routerLink="/vehicles" routerLinkActive="active" *ngIf="isAuthenticated">Vehicles</a>
+    <a mat-button routerLink="/login" routerLinkActive="active" *ngIf="!isAuthenticated">Sign up</a>
+    <a mat-button  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a>
+
   </mat-toolbar>
