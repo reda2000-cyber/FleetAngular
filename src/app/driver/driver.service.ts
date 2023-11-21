@@ -9,9 +9,9 @@ import { Subject } from 'rxjs';
 export class DriverService {
 
   drivers : Driver[] = [
-    new Driver(0,"reda", "sm", this.vehicleService.getVehicles()[0], "assets/Drivers/driver0.png"),
-    new Driver(1,"moha", "mm", this.vehicleService.getVehicles()[1], "assets/Drivers/driver1.png"),
-    new Driver(2,"karim", "rm",this.vehicleService.getVehicles()[2], "assets/Drivers/driver2.png")
+    new Driver(0,"reda", "sm", this.vehicleService.getVehicles()[0], "Images/driver0.png"),
+    new Driver(1,"moha", "mm", this.vehicleService.getVehicles()[1], "Images/driver1.png"),
+    new Driver(2,"karim", "rm",this.vehicleService.getVehicles()[2], "Images/driver2.png")
   ]
 
   driverSelected = new Subject<Driver>();
@@ -27,6 +27,12 @@ export class DriverService {
   }
 
   saveDriver(driver: Driver){
-    this.drivers.push(driver);
+
+    if(driver.id != undefined){
+      this.drivers[driver.id]= driver;
+    }else{
+      driver.id = this.drivers.length;
+      this.drivers.push(driver);
+    }
   }
 }

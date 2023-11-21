@@ -26,7 +26,7 @@ export class VehicleService {
   }
 
   saveVehicle(vehicle : Vehicle){
-    if(vehicle.id){
+    if(vehicle.id != undefined){
       this.vehicles[vehicle.id]= vehicle;
     }else{
       vehicle.id = this.vehicles.length;
