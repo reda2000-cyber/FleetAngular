@@ -1,12 +1,12 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>{{driver?.firstName | firstNamePipe}} </mat-label>
-      <input matInput placeholder="First Name">
+      <input matInput placeholder="First Name" [(ngModel)]="driver.firstName">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
       <mat-label>{{driver?.lastName | uppercase}}</mat-label>
-      <input matInput placeholder="Last Name">
+      <input matInput placeholder="Last Name" [(ngModel)]="driver.lastName">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
@@ -21,7 +21,7 @@
     <input placeholder="Photo" type="file">
   
     <div class="button-row">
-      <button mat-flat-button color="primary">Save</button>
+      <button mat-flat-button color="primary" (click)="saveDriver()">Save</button>
     </div>
   
   </form>

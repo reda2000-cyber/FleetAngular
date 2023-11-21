@@ -1,3 +1,2 @@
-<app-navbar (pageSelected)="onPageSelected($event)"></app-navbar>
-<app-driver *ngIf="accPage === 'drivers'"></app-driver>
-<app-vehicle *ngIf="accPage === 'vehicles'"></app-vehicle>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>

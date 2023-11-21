@@ -7,15 +7,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavbarComponent {
 
-  @Output() pageSelected = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  onSelect(page: string): void{
-    this.pageSelected.emit(page);
-  }
-
+  
 }

@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { FirstNamePipe } from './utils/first-name.pipe';
 import { ShadowDirective } from './utils/shadow.directive';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -27,7 +29,9 @@ import { ShadowDirective } from './utils/shadow.directive';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    RouterModule,
+    FormsModule
   ],
   exports: [
     MatToolbarModule,
@@ -39,7 +43,9 @@ import { ShadowDirective } from './utils/shadow.directive';
     MatSelectModule,
     MatTableModule,
     ShadowDirective,
-    FirstNamePipe
+    FirstNamePipe,
+    RouterModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

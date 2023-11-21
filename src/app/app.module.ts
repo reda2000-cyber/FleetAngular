@@ -16,6 +16,7 @@ import { FirstNamePipe } from './utils/first-name.pipe';
 import { DriverModule } from './driver/driver.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { SharedModule } from './shared.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -34,7 +35,8 @@ import { SharedModule } from './shared.module';
     BrowserAnimationsModule,
     DriverModule,
     VehicleModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
