@@ -1,36 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Vehicle } from './vehicle';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleService {
 
-  vehicles : Vehicle[] = [
-    new Vehicle(0, "Mercedes", 13, "M745P2"),
-    new Vehicle(1, "Audi", 582, "A44P002"),
-    new Vehicle(2, "Tesla", 990, "F86D2210")
-  ]
+  path : string = environment.api+"/vehicles";
 
   vehicleChanged = new Subject<void>();
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
-  getVehicles(): Vehicle[]{
-    return this.vehicles;
+  getVehicles(): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(this.path);
   }
 
-  getVehicleById(id : number): Vehicle{
-    return this.vehicles[id];
+  getVehicleById(id : number): Observable<Vehicle>{
+    return this.http.get<Vehicle>(`${this.path}/${id}`);
   }
 
-  saveVehicle(vehicle : Vehicle){
+  saveVehicle(vehicle : Vehicle): Observable<Vehicle>{
     if(vehicle.id != undefined){
-      this.vehicles[vehicle.id]= vehicle;
+      return this.http.patch<Vehicle>(this.path, vehicle);
     }else{
-      vehicle.id = this.vehicles.length;
-      this.vehicles.push(vehicle);
+      return this.http.post<Vehicle>(this.path, vehicle);
     }
   }
 }

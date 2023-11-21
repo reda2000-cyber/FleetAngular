@@ -1,0 +1,30 @@
+{
+  "vehicles": [
+    {
+      "id": 0,
+      "matricule": "P2250",
+      "brand": "Tesla",
+      "currentKm": 1258
+    },
+    {
+      "id": 1,
+      "matricule": "M745P2",
+      "brand": "Mercedes",
+      "currentKm": 13
+    },
+    {
+      "id": 2,
+      "matricule": "A44P002",
+      "brand": "Audi",
+      "currentKm": 582
+    },
+    {
+      "brand": "Dacia",
+      "currentKm": "7777",
+      "matricule": "P58422",
+      "id": 3
+    }
+  ],
+  "drivers": [],
+  "users": []
+}

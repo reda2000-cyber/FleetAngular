@@ -9,9 +9,7 @@ import { Subject } from 'rxjs';
 export class DriverService {
 
   drivers : Driver[] = [
-    new Driver(0,"reda", "sm", this.vehicleService.getVehicles()[0], "Images/driver0.png"),
-    new Driver(1,"moha", "mm", this.vehicleService.getVehicles()[1], "Images/driver1.png"),
-    new Driver(2,"karim", "rm",this.vehicleService.getVehicles()[2], "Images/driver2.png")
+    
   ]
 
   driverSelected = new Subject<Driver>();

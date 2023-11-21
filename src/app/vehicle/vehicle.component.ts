@@ -22,9 +22,10 @@ export class VehicleComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.vehicleService.getVehicles());
+
+    this.vehicleService.getVehicles().subscribe(vehicles=> this.dataSource = new MatTableDataSource(vehicles));
     this.vehicleService.vehicleChanged.subscribe(() =>
-      this.dataSource = new MatTableDataSource(this.vehicleService.getVehicles())
+    this.vehicleService.getVehicles().subscribe(vehicles=> this.dataSource = new MatTableDataSource(vehicles))
     );
   }
 

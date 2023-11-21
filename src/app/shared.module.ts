@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -41,7 +42,8 @@ import { environment } from 'src/environments/environment';
     MatDialogModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     MatToolbarModule,
@@ -59,7 +61,8 @@ import { environment } from 'src/environments/environment';
     MatDialogModule,
     AngularFireModule,
     AngularFireStorageModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

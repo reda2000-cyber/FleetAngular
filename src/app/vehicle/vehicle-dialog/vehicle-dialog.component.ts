@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Vehicle } from '../vehicle';
 import { NgForm } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle-dialog',
@@ -45,9 +46,11 @@ export class VehicleDialogComponent implements OnInit, AfterViewInit{
     this.vehicle.currentKm = this.vehicleForm.value.currentKm;
     this.vehicle.matricule = this.vehicleForm.value.registartionNumber;
 
-    this.vehicleService.saveVehicle(this.vehicle);
-    this.vehicleService.vehicleChanged.next();
+    this.vehicleService.saveVehicle(this.vehicle).subscribe(() =>{
+      this.vehicleService.vehicleChanged.next();
     this.dialogRef.close();
+    });
+    
   }
 
 }
