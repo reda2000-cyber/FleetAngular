@@ -13,6 +13,10 @@ import { ShadowDirective } from './utils/shadow.directive';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { environment } from 'src/environments/environment';
+
 
 
 
@@ -34,7 +38,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     RouterModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   exports: [
     MatToolbarModule,
@@ -49,7 +55,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     FirstNamePipe,
     RouterModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule,
+    AngularFireStorageModule
   ]
 })
 export class SharedModule { }

@@ -17,6 +17,10 @@ import { DriverModule } from './driver/driver.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { SharedModule } from './shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -36,7 +40,10 @@ import { AppRoutingModule } from './app-routing.module';
     DriverModule,
     VehicleModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fleet-dbf3c": {
+      "hosting": {
+        "fleet": [
+          "fleet-dbf3c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fleet-dbf3c"
+  }
+}
