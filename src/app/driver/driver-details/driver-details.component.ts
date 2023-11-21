@@ -27,9 +27,11 @@ export class DriverDetailsComponent implements OnInit{
       this.id =+ this.activatedRoute.snapshot.params["id"];
       this.editMode = this.id != null && !isNaN(this.id);
       if(!this.editMode){
-      this.driver = new Driver();
-      this.driver.vehicle = new Vehicle();
-    }
+        this.driver = new Driver();
+        this.driver.vehicle = new Vehicle();
+      }else{
+        this.driver = this.driverService.getDriverById(this.id);
+      }
     }
 
     saveDriver(){

@@ -12,6 +12,8 @@ import { FirstNamePipe } from './utils/first-name.pipe';
 import { ShadowDirective } from './utils/shadow.directive';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatTableModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   exports: [
     MatToolbarModule,
@@ -45,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     ShadowDirective,
     FirstNamePipe,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }
